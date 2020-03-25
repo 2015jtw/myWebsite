@@ -1,0 +1,203 @@
+<!DOCTYPE html5>
+<html>
+	
+    <head>
+
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+   		<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+    	<meta charset="utf-8">
+		<title> Where's Waldo? </title>
+
+		<link rel="stylesheet" type="text/css" href="index3cssKW.css"/>
+
+	</head>
+
+	<body>
+			
+			<span id="header">
+
+				<h1> Where's Waldo? </h1>
+
+			 </span>
+            
+
+			 <div id="info">	
+
+				 	<h3> Real Time Location Tracking: <br> Finding people is much easier than finding Waldo. </h3>
+
+				
+
+				 	<p> Input your user ID to begin. <br> Please keep your browser open when tracking. </p>
+
+				 	<hr>
+
+			 	
+			 </div>
+
+			 
+
+			 <div id="button">
+			 	
+			 	<button onclick= "trackMe()" > Input user ID </button>
+
+			 	<p id="tracker"> </p>
+
+			 	<!-- figure out how to attach both grabLocation and startTimer to the onclick event button -->
+			 	<button onclick="set30secInterval();"> Extract location in real-time </button>
+
+			 	<p id="locator"> </p>
+
+			 	<p id="date"> </p>
+
+			 </div>
+
+
+			 <div id="map">
+
+			 	<h3> Curious to see where we've been? <br>
+
+			 		<a href="final_map_test.html"> <u> link </u> to our steps here </a>
+
+			 	 </h3>
+			 	
+			 	
+			 </div>
+
+
+
+	</body>
+
+	<script>
+
+/* tried to write function to only show the onclick text boxes once the onclick happened, but didn't work
+		function showButton() {
+	 		var x = document.getElementById("tracker");
+	  		if (x.style.display === "none") {
+		    	x.style.display = "block";
+		  } else{
+		  		 } 
+		}
+
+		*/
+
+		//initialize the vars for the writeToCSV 
+		var timestamp, info, latitude, longitude;
+	
+
+
+		//This function will prompt the user for their userID, and if it is correct, then the proper message will pop up 
+
+		function trackMe(){
+
+			var userID = window.prompt("Please enter your user ID. Due note, the user ID must be alphanumeric and cannot contain spaces.");
+
+			var josh = "JW";
+			var kelly = "KW";
+			var saaesh = "SM";
+
+			//it appears as tho only the else condition runs 
+
+			//josh
+			if (userID == '260663427'){
+				info = josh;
+				document.getElementById("tracker").innerHTML = "Your tracking identifier is: " + info; 
+			}
+
+			//kelly
+			else if (userID == '260785363'){
+				info = kelly;
+				document.getElementById("tracker").innerHTML = "Your tracking identifier is: " + info; 
+			}
+
+			//saaesh
+			else if (userID == '260727678'){
+				info = saaesh;
+				document.getElementById("tracker").innerHTML = "Your tracking identifier is: " + info; 
+			}
+
+			else{
+				document.getElementById("tracker").innerHTML = "Access denied. Back to the book!"; 
+			}
+		}
+
+		function startTimer(){
+			timestamp = new Date();
+			document.getElementById("date").innerHTML = timestamp.toString();
+		}
+
+
+		var personLocation = document.getElementById("locator");
+
+		function grabLocation(){
+			if (navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			else {
+				personLocation.innerHTML = "Geolocation is not supported by this browser";
+			}
+		}
+
+		function showPosition (position){
+			latitude = position.coords.latitude;
+			longitude = position.coords.longitude;
+			personLocation.innerHTML = "Latitude: " + latitude + "<br> Longitude: " + longitude;
+		}
+
+		/*maybe need to change setInterval (make function) and attach to button onlick event
+		var timer = setInterval(startTimer, 30000);
+		var trackLocation = setInterval(personLocation, 30000);
+
+		*/
+
+		
+		function saveData(){
+		 	startTimer();
+		    grabLocation();
+		    writeToCSV(timestamp, info, latitude, longitude);
+    }
+
+    	function set30secInterval() {
+	        saveData()
+	        setInterval(saveData, 30000);
+	    }
+    
+
+
+		//code written by: Ian Tattersfield
+		//version update: February 21, 2019
+		//***************************************************************
+		//takes as input variables, reads and sends them to the 
+		//writetojson.php file.
+
+		
+		function writeToCSV(timestamp_in, userID_in, lat_in, lng_in){
+			if(timestamp_in == "undefined" || userID_in == "undefined" || lat_in == "undefined" || lng_in == "undefined"){
+				return;
+			}
+
+			var user = {
+		    timestamp_in: encodeURIComponent(timestamp_in),
+		    userID_in: encodeURIComponent(userID_in),
+		    lat_in: encodeURIComponent(lat_in),
+		    lng_in: encodeURIComponent(lng_in),
+			};	
+
+			if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest();}
+
+			else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+
+			var url = "?timestamp="+user.timestamp_in+"&userID="+user.userID_in+"&lat="+user.lat_in+"&lng="+user.lng_in;
+
+			var sendUrl = 'writetojson.php' + url;
+
+			xmlhttp.open("GET", sendUrl, false); 
+
+			xmlhttp.send();
+		}
+
+
+
+
+	</script>
+
+</html>

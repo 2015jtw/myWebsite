@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Group1 Smart City Portal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="normalize.css">
+
+	<style>
+	.tooltip{
+position: absolute;
+text-align: center;
+width: 13%;
+height:25%;
+padding: 2vw;
+font: 1.2vw sans-serif;
+border: 0px;
+border-radius: 8px;
+color:black;
+box-shadow: -3px 3px 15px #888888;
+opacity:0;
+
+}
+
+body{
+	background: #FAFAFA;
+}
+</style>
+	</head>
+	<body>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div id="fh5co-header">
+			<header id="fh5co-header-section">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<!-- START #fh5co-menu-wrap -->
+						
+					</div>
+				</div>
+			</header>
+		</div>
+		<!-- end:fh5co-header -->
+		<h1 style="text-align: center; font-size: 200%; font-family: arial"> The spatially demonstrated distribution patterns of ethnic groups in Montreal </h1>
+			<p style="text-align: left; font-size: 100%; font-family: arial"> As part of our Smart City Portal initiative, our team believes that an effective way to close the citizen-city divide and raise awareness about the social dynamics of the people of Montreal is through providing more open-data regarding the living patterns of different ethnic groups in Montreal. From a historical point of view, Montreal is known to be a multicultural city that embraces differences, yet there is always room for growth. Generally speaking, most neighborhoods are cohabitated by various minority groups, yet there are aggregations of certain ethnic groups to certain areas that have lead to a phenomenon coined compartmentalization. This phenomenon refers to people with shared characteristics, which can take the form of language, values, geographic place of origin, economic status, and even physical traits will converge. Moreover, the concept of segregation may tie into this social dynamic, where a ethnic minority group is involuntarily isolated from the rest of the larger population and concentrates in a high density level in a particular area.
+			</p>
+				<p style="text-align: left; font-size: 100%; font-family: arial"> 	We believe that one way to bring social change to our beloved city is through this provision of open data pertaining to the population densities of distinct minority groups in Montreal’s boroughs over a period of time ranging from 1996 to 2016. We will focus on groups of people originating from the following nations: Italy, Algeria, Haiti, France, Morocco, China, Philippines, Vietnam, Romania, and Libya.
+				</p>
+		<div id="fh5co-team-section">
+			<div align="center">
+				<h1>Which Montreal Boroughs have the Highest % of ________? </h1>
+				<h4>Boroughs are sorted by mean income (color)</h4>
+			</div>
+		<br>
+		<br>
+			<div id = "svgContent"></div>
+		<script>
+		//drop down menue stuff
+		var legendInputs = ["% Black Population", "% French Mother Tounge", "% Children"];
+
+		var select = d3.select('body')
+		  .append('select')
+		    .attr('class','select')
+		    .on('change',onchange)
+		$("select").css({top: 500, left: 200, position:'absolute'});
+
+		var options = select
+		  .selectAll('option')
+		  .data(legendInputs).enter()
+		  .append('option')
+		    .text(function (d) { return d; });
+
+		function onchange() {
+		  selectValue = d3.select('select').property('value')
+		  getData(selectValue);
+		  d3.select('body')
+		    .append('p')
+		};
+
+		intializeD3(); //initally load first item in drop down menu
+
+		function getData(selectValue){
+		  var dataBlackPop = [{"Borough":" Outremont","Attribute":45, "Income":80000}, //currently must be in the order of highest income to lowest for color gradient to work
+		        {"Borough":" Le Sud-Ouest","Attribute":7, "Income":70000},
+		        {"Borough":" Le Plateau-Mont-Royal","Attribute":13, "Income":67000},
+		        {"Borough":" Anjou","Attribute":10, "Income":55000},
+		        {"Borough":" Lachine","Attribute":11, "Income":38000},
+		        {"Borough":" LaSalle","Attribute":30, "Income":35000},
+		        {"Borough":" Saint-Laurent","Attribute":25, "Income":33000},
+		        {"Borough":" Verdun","Attribute":3, "Income":27000}];
+
+		    var dataChildren = [{"Borough":" Outremont","Attribute":15, "Income":80000}, //should probably have these stored in csvs and just access them
+		          {"Borough":" Le Sud-Ouest","Attribute":6, "Income":70000},
+		          {"Borough":" Le Plateau-Mont-Royal","Attribute":20, "Income":67000},
+		          {"Borough":" Anjou","Attribute":7, "Income":55000},
+		          {"Borough":" Lachine","Attribute":13, "Income":38000},
+		          {"Borough":" LaSalle","Attribute":3, "Income":35000},
+		          {"Borough":" Saint-Laurent","Attribute":18, "Income":33000},
+		          {"Borough":" Verdun","Attribute":10, "Income":27000}];
+
+		    var dataFrench = [{"Borough":" Outremont","Attribute":78, "Income":80000},
+		          {"Borough":" Le Sud-Ouest","Attribute":15, "Income":70000},
+		          {"Borough":" Le Plateau-Mont-Royal","Attribute":95, "Income":67000},
+		          {"Borough":" Anjou","Attribute":30, "Income":55000},
+		          {"Borough":" Lachine","Attribute":68, "Income":38000},
+		          {"Borough":" LaSalle","Attribute":80, "Income":35000},
+		          {"Borough":" Saint-Laurent","Attribute":42, "Income":33000},
+		          {"Borough":" Verdun","Attribute":35, "Income":27000}];
+
+		    if (selectValue === '% French Mother Tounge') {
+		       data = dataFrench;
+		       runD3(data);
+		    }
+		   else if (selectValue=== '% Black Population') {
+		       data = dataBlackPop;
+		       runD3(data);
+		   }
+		   else if (selectValue === '% Children') {
+		      data = dataChildren;
+		      runD3(data);
+		   }
+		}
+
+		function runD3(data){
+		    d3.select("svg").remove(); //first, remove past iteration of D3 svg graphic
+
+		    var margin = {top:40,left:40,right:40,bottom:40};
+		    width = 300;
+		    height = 300;
+		    radius = Math.min(width-100,height-100)/2;
+		    var color = d3.scale.category10();
+		    var arc = d3.svg.arc()
+		           .outerRadius(radius -230)
+		           .innerRadius(radius - 50)
+		  		 .cornerRadius(20);
+		    var arcOver = d3.svg.arc()
+		        .outerRadius(radius +50)
+		        .innerRadius(0);
+
+		    var a=width/2 - 20;
+		    var b=height/2 - 90;
+		    var svg = d3.select("#svgContent").append("svg")
+		            .attr("viewBox", "0 0 " + width + " " + height/2)
+		      .attr("preserveAspectRatio", "xMidYMid meet")
+		            .append("g")
+		            .attr("transform","translate("+a+","+b+")");
+
+		  		  div = d3.select("body")
+		    .append("div")
+		    .attr("class", "tooltip");
+
+		    var pie = d3.layout.pie()
+		            .sort(null)
+		            .value(function(d){return d.Attribute;})
+		  		  .padAngle(.02);
+
+		    var color = d3.scale.linear()
+		        .domain([0, 7])
+		        .range(["green", "blue"]);
+
+		    var g = svg.selectAll(".arc")
+		          .data(pie(data))
+		          .enter()
+		          .append("g")
+		          .attr("class","arc")
+		           .on("mousemove",function(d){
+		          	var mouseVal = d3.mouse(this);
+		          	div.style("display","none");
+		          	div
+		          	.html("<b>Borough:</b>"+d.data.Borough+"<br><br>"+d.data.Attribute+"%"+"<b><br>Mean Income: </b>" + d.data.Income)
+		              .style("left", (d3.event.pageX+12) + "px")
+		              .style("top", (d3.event.pageY-10) + "px")
+		              .style("opacity", 1)
+		              .style("display","block");
+		          })
+		          .on("mouseout",function(){div.html(" ").style("display","none");});
+
+		  		g.append("path")
+		  		.attr("d",arc)
+		      .attr('fill', function(d,i){ return color(i);});
+		  		//.style("fill",function(d){return color(d.data.Income);})
+		  		// .attr("d", arc);;
+		 }
+
+		function intializeD3(){ //intialize D3 svg graphic using the data associated witht the first item in the drop down; this also lets all other iterations be reloaded cleanly
+		  var data = [{"Borough":" Outremont","Attribute":45, "Income":80000}, //currently must be in the order of highest income to lowest for color gradient to work
+		        {"Borough":" Le Sud-Ouest","Attribute":7, "Income":70000},
+		        {"Borough":" Le Plateau-Mont-Royal","Attribute":13, "Income":67000},
+		        {"Borough":" Anjou","Attribute":10, "Income":55000},
+		        {"Borough":" Lachine","Attribute":11, "Income":38000},
+		        {"Borough":" LaSalle","Attribute":30, "Income":35000},
+		        {"Borough":" Saint-Laurent","Attribute":25, "Income":33000},
+		        {"Borough":" Verdun","Attribute":3, "Income":27000}];
+
+		     var margin = {top:40,left:40,right:40,bottom:40};
+		     width = 300;
+		     height = 300;
+		     radius = Math.min(width-100,height-100)/2;
+		     var color = d3.scale.category10();
+		     var arc = d3.svg.arc()
+		            .outerRadius(radius -230)
+		            .innerRadius(radius - 50)
+		   		 .cornerRadius(20);
+		     var arcOver = d3.svg.arc()
+		         .outerRadius(radius +50)
+		         .innerRadius(0);
+
+		     var a=width/2 - 20;
+		     var b=height/2 - 90;
+		     var svg = d3.select("#svgContent").append("svg")
+		             .attr("viewBox", "0 0 " + width + " " + height/2)
+		       .attr("preserveAspectRatio", "xMidYMid meet")
+		             .append("g")
+		             .attr("transform","translate("+a+","+b+")");
+
+		   		  div = d3.select("body")
+		     .append("div")
+		     .attr("class", "tooltip");
+
+		     var pie = d3.layout.pie()
+		             .sort(null)
+		             .value(function(d){return d.Attribute;})
+		   		  .padAngle(.02);
+
+		    var color = d3.scale.linear()
+		      .domain([0, 7])
+		      .range(["green", "blue"]);
+
+		     var g = svg.selectAll(".arc")
+		           .data(pie(data))
+		           .enter()
+		           .append("g")
+		           .attr("class","arc")
+		            .on("mousemove",function(d){
+		           	var mouseVal = d3.mouse(this);
+		           	div.style("display","none");
+		           	div
+		           	.html("<b>Borough:</b>"+d.data.Borough+"<br><br>"+d.data.Attribute+"%"+"<b><br>Mean Income: </b>" + d.data.Income)
+		               .style("left", (d3.event.pageX+12) + "px")
+		               .style("top", (d3.event.pageY-10) + "px")
+		               .style("opacity", 1)
+		               .style("display","block");
+		           })
+		           .on("mouseout",function(){div.html(" ").style("display","none");});
+
+		   		g.append("path")
+		   		.attr("d",arc)
+		      .attr('fill', function(d,i){return color(i);});
+		   		//.style("fill",function(d){return color(d.data.Income);})
+		   		// .attr("d", arc);;
+		  }
+		</script>
+	</div>
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h3 class="section-title">About Us</h3>
+							<p>Forged from Professor Renee Sieber's discretion, group 1 has risen from the ashes to get As on all GEOG 384 assignments</p>
+						</div>
+						<div class="col-md-3">
+							<h3 class="section-title">Our Address</h3>
+							<ul class="contact-info">
+								<li><i class="icon-map2"></i>805 Rue Sherbrooke O, Montreal, QC H3A 0B9</li>
+								<li><i class="icon-globe2"></i><a href="#">www.neogeoweb.ca/group1/portal/beam/index.html</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<h3 class="section-title">Drop us a line</h3>
+							<form class="contact-form">
+								<div class="form-group">
+									<label for="name" class="sr-only">Name</label>
+									<input type="name" class="form-control" id="name" placeholder="Name">
+								</div>
+								<div class="form-group">
+									<label for="email" class="sr-only">Email</label>
+									<input type="email" class="form-control" id="email" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label for="message" class="sr-only">Message</label>
+									<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
+								</div>
+								<div class="form-group">
+									<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="row copy-right">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter2"></i></a>
+								<a href="#"><i class="icon-facebook2"></i></a>
+								<a href="#"><i class="icon-instagram"></i></a>
+								<a href="#"><i class="icon-dribbble2"></i></a>
+								<a href="#"><i class="icon-youtube"></i></a>
+							</p>
+							<p>&copy; 2018 GEOG 384 Group1 <a href="#">McGill University</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash </a>,<a href="https://pexels.com/" target="_blank"> Pexels</a> <br> Colored Icons: <a href="http://flaticon.com" target="_blank">Flaticon</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
