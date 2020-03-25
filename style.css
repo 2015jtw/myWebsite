@@ -1,0 +1,139 @@
+#cover_photo{
+	background-image: url(pics/coverphoto.jpg);
+	padding: 150px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	height: 60%;
+
+	}
+
+body{
+	margin: 0;
+}
+
+#about_me{
+	font-family: 'Baloo Chettan 2', cursive;
+	margin-left: 10px;
+	position: relative;
+	top: -155px;
+
+}
+
+#about_me h1{
+	font-size: 45px;
+}
+
+#about_me ul{
+	list-style: none;
+
+}
+
+#nav{
+	background: #ccc;
+	color: black;
+	text-align: center;
+	margin: auto;
+
+}
+
+#nav ul{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+
+#nav li{
+	display: inline;
+	padding: 5px;
+	font-size: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+
+}
+
+#nav li:hover{
+	background: #aaa;
+
+
+}
+
+#main_container{
+	text-align: center;
+	margin: auto;
+	padding-top: 15px;
+	background: white; 
+
+
+}
+
+#main_container img{
+	width: 100px;
+	
+}
+
+#main_container span{
+	display: inline;
+
+}
+
+.formatleft {
+	text-align: left;
+
+}
+
+.formatright{
+	text-align: right;
+}
+
+
+
+
+
+
+
+#contact{
+	position: relative;
+	left: 20px;
+}
+
+
+
+
+.footer-container{
+	background-color: #3D444A;
+	color: #fff;
+	padding: 3em 0;
+	border-radius: 40px;
+	text-align: center;
+
+
+}
+
+.fa {
+  padding: 15px;
+  font-size: 30px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
