@@ -1,10 +1,11 @@
 #cover_photo{
 	background-image: url(pics/coverphoto.jpg);
+	position: relative; 
 	padding: 150px;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	display: flex;
-	height: 60%;
+	height: 90%;
 
 	}
 
@@ -60,18 +61,23 @@ body{
 
 }
 
-#main_container{
+.container p{
+	font-size: 18px;
+}
+
+.thumbnail img{
+	width: 100%;
+}
+
+#portfolio{
 	text-align: center;
 	margin: auto;
 	padding-top: 15px;
-	background: white; 
-
 
 }
 
-#main_container img{
-	width: 100px;
-	
+#portfolio img{
+	width: 20%;
 }
 
 #main_container span{
@@ -79,19 +85,58 @@ body{
 
 }
 
-.formatleft {
-	text-align: left;
+
+.col-lg-8 ul{
+	list-style: none;
+	font-size: 18px;
 
 }
 
-.formatright{
-	text-align: right;
+.col-lg-8 li{
+	padding: 8px;
 }
 
 
+#pythonPic img{
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
+#webdev{
+	margin-top: 8%;
+}
 
+#webdev h4{
+	margin-top: 5%;
+}
+
+
+embed{
+	height: 55%;
+	width: 45%;
+}
+
+.col-lg-6 embed{
+	width: 90%;
+}
+
+.col-lg-6 h3{
+	margin-top: 20%;
+}
+
+.gis p{
+	line-height: 2.2em;
+}
+
+#fix h3{
+	margin-top: 5%;
+}
+
+.container h2{
+	margin-top: 5%;
+}
 
 
 #contact{
@@ -115,7 +160,7 @@ body{
 .fa {
   padding: 15px;
   font-size: 30px;
-  width: 25px;
+  width: 4.5%;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;

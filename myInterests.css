@@ -1,0 +1,54 @@
+body{
+	padding-top: 70px;
+}
+
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+	background: #2c3e50;
+
+}
+
+.container-fluid{
+	background: #2c3e50;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: white;
+}
+
+.navbar-inverse .navbar-brand{
+	color: white;
+}
+
+img{
+
+	width: 29.5%;
+	margin: 1.66%;
+}
+
+
+
+p{
+	font-family: 'Raleway', sans-serif;
+	margin-left: 1.66%;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: 3px solid #f1f1f1;
+	width: 29.5%;
+	padding-bottom: 10px;
+	letter-spacing: 0.2rem;
+
+}
+
+img:hover{
+	transform: scale(1.1);
+}
+
+
+.title p{
+	text-transform: none;
+	width: 60%;
+
+
+}

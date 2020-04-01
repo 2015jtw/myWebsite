@@ -8,12 +8,17 @@
 		<meta charset="utf-8">
 		<title> Josh Worden's Website</title>
 		
+		<!-- LINK BOOTSTRAP	3 -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+
+
 		<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- adding mapbox background to website -->
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'> </script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
 		<!-- this is the main css file for the website -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -25,13 +30,16 @@
 			<div id="cover_photo">
 				<div id="about_me">
 
+
+
 					<h1> Josh Worden</h1>
 
 						<ul>
+							<li> Aspiring entrepreneur and data scientist</li>
 							<li> Student-Athlete</li>
 							<li> World Traveller</li>
 							<li> Outdoor Enthusiast</li>
-							<li> Aspiring entrepreneur and data scientist</li>
+							
 						</ul>
 
 																	
@@ -45,99 +53,114 @@
 				<ul>
 					<!--this will be an anchor tag -->
 					<li> My Portfolio</li>
-
 					<!-- these two will be separate webpages -->
-					<li> My Interests</li>
-					<li> My Story</li>
-
+					<li> <a href="myInterests.html"> My Interests</a> </li>
+					<li> My Story </li>
 					<!-- this wil be an anchor tag -->
 					<li> Contact Me </li>
-
-
 				</ul>
 
-
-
 			</div>
-
-
-
 	
 		</div>
 
-		<div id="main_container">
+		
 
-			<div id="portfolio">
+		<div id="portfolio">
 
-				<h1> <i> My Portfolio </i> </h1>
+			<h1> <i> My Portfolio </i> </h1>
 
-				<br>
+			<br>
+
+		
 
 
-				<div id="gis">
+			<div class="container">
+
+				<div class="row gis">
 					<h2>  GIS Projects </h2>
 
+
 					<hr>
-
-					<h4> Give a short intro/description of what gis is and why it is important</h4>
-
-
-					<div class="formatleft">
+					<div class="col-lg-12">
 						<h3> Research Paper examining the Optimal Placement of a New Subway Station in Brooklyn, New York</h3>
 
 						<p> This research paper argues that the construction of a new subway station in Red Hook, Brooklyn represents an ideal investment for the municipal government of New York. This investment in public transit will lead to increased social and economic mobility for its low-income residents, as they will rely heavily on the new public transit option.</p>
 
-						<a href="projects/GEOG 307 Final.pdf"> Open Report </a>
-						<br>
 						<br>
 
 						<embed src="projects/completeSubwayEstimate.pdf" type="">
-
 						<embed src="projects/needy_pop.pdf" type="">
 
+								
+						<br>
+
+
+						<button class="btn btn-link"> <a href="projects/GEOG 307 Final.pdf"> Download Research Paper</a>
+						</button>
+
+					</div>
+
+					<div class="col-lg-6" >
+						<h3> Raster GIS Disease Identification Applications Assignment</h3>
+
+						<p class="my-3">For the intents of this raster GIS assignment, I have been hired as a consultant by the World Health Organization to prepare a map that identifies all regions in West-Africa where there is a high risk of Malaria. The Malaria disease is transmitted by a mosquito species that can only survive if the temperature remains at or above 15.7°C all year round. To learn more, see <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1458623"> Malaria Risk and Temperature</a></p>
 					
-
-
 					</div>
- 
-				
-					<div class="formatright">
-						<h3> Vector GIS Business Applications Assignment</h3>
 
-						<p> For the purpose of this assignment, I was theoretically hired by Paradigm (www.paradigm.com), a Canadian company that sells mid-to-high end quality speakers. They target a small market segment know as "Audiophiles".
-						This assignment entailed finding a good location in the Platea neighborhood of Montreal (St. Laurent/St. Denis and Avenue Mont-Royal area) for a new Paradigmn storefront that will cater to these audiophiles. Market research revealed that their target market is typically male, between the ages of 30 and 44, with an average yearly household income of greater than $35,000. Their target individuals live in condominiums and townhouses in the Plateau, and do not own cars. The new store should be located within 1km from a high concentration of this target market.</p>
-
-						<embed src="projects/lab2.pdf" type="application/pdf">
+					<div class="col-lg-6">
+						<embed src="projects/malariaMap.pdf" type="application/pdf" style="margin-top: 10%">
+						
 
 					</div>
 
-					<div class="formatleft">
+				<div class="row">
+					<div class="col-lg-12">
+						
+						
+
+					</div>
+
+					<div class="col-lg-6 gis">
+
 						<h3> Vector GIS Public Health Location Allocation Applications Assignment  </h3>
 
 						<p> This assignment involved merging 7 community health centers (Centre local de Services Communitaire) into 2 for the region around downtown Montreal, as part of the Health Minister of Quebec's aggressive cost-cutting policy. I was required to advise which community health centers to close with minimal impacts on accessibility, while simulteanously determining if a new CLSC can be built at a “better” location by recommending a new candidate site for a new facility.</p>
 
-						<embed src="projects/Lab4Final.pdf" type="application/pdf">
+						
 
-
+						
 					</div>
 
-
-					<div class="formatright">
-						<h3> Raster GIS Disease Identification Applications Assignment</h3>
-
-						<p>For all intents and purposes, I have been hired as a consultant  by the World Health Organization and contracted to prepare a map that identifies all regions in West-Africa where there is a high risk of Malaria. Moreover, I have also been tasked with preparing a map displaying the location of the hottest recorded monthly temperature. </p>
-			
-						<embed src="projects/malariaMap.pdf" type="application/pdf">
-
-						<embed src="projects/MonthHottestTempMap.pdf" type="application/pdf">
-
+					<div class="col-lg-6">
+						<embed src="projects/Lab4Final.pdf" type="application/pdf" style="margin-top: 15%">
+						
 					</div>
 
+					<div class="col-lg-12">
+						
+					</div>
+					<div class="col-lg-6 gis">
+						<h3> GIS Storefront Location Assignment</h3>
+
+						<p> As a GIS assignment, I was tasked with finding a new storefront situated within 1km of a high concentration of its target market in the Plateau neighborhood of Montreal for Paradigm, a Canadian company that sells mid-to-high end quality speakers. Market research revealed that their target market was male, between the ages of 30 and 44, and with an average yearly household income of greater than $35,000.</p>
+
+						
+						
+					</div>
+
+					<div class="col-lg-6">
+						<embed src="projects/lab2.pdf" type="application/pdf" style="margin-top: 10%">
+						
+					</div>
 					
+
 
 				</div>
 
 
+<!-- gis close tag -->
+				</div>
 
 				<div id="coding">
 
@@ -146,123 +169,199 @@
 					<hr>
 
 					<div id="python">
-						<h3> Python </h3>
+						<div class="row">
+							<div class="col-lg-6" id="fix">
+								<h3 style="margin-top: 0%"> Python </h3>
 
-						<p> Through a geography/comp sci course at here at McGill, GEOG 407 I gained exposure to the programming language Python. I've had previous experience with Java, but was quickly converted to Python due to its greater functionality and intuitive nature. Coming from a GIS perspective, I really came to appreciate Python when I realized that it contained certain open-sourced libraries that enabled the creation and dissemination of geospatial data, like ESRI shapefiles. This was the very same type of data that i've been using for years to undergo GIS-based analysis. </p>
+								<p> Through a geography/comp sci course at here at McGill, GEOG 407 I gained exposure to the programming language Python. I've had previous experience with Java, but was quickly converted to Python due to its greater functionality and intuitive nature. Coming from a GIS perspective, I really came to appreciate Python when I realized that it contained certain open-sourced libraries that enabled the creation and dissemination of geospatial data, like ESRI shapefiles. This was the very same type of data that i've been using for years to undergo GIS-based analysis. </p>
 
-						<div class="formatleft">
+								<p> This particular course culminated with a very interesting final assignment. I was provided with data containing a sample of buildings on the island of Montreal. An certain percentage of these buildings held information about their "place category", i.e. cafe or bank. My Task involved prompting a user for a radius in meters and a pair of coordinates, and then calculating the total area of each place category that intersected with the user-defined region. 
+								</p>
+								<p>What really struck me about this assignment was the sheer scale of potential that came with being able to do like-minded work. Once i'd successfully created the python script, I realized that as long as I found suitable geospatial, I could repeat that same analysis on any place on earth. </p>
+								
+
+
+							</div>
+
+							<div class="col-lg-6 center-block" id="pythonPic">
+								<div class="thumbnail">
+									<img src="projects/geog407finalpic.png" alt="" class="img-responsive" style="width: 70%;">
+
+								</div>
+								<div class="thumbnail">
+									<img src="projects/Screen Shot 2020-03-19 at 11.49.33 AM.png" alt="" class="img-responsive" style="display: inline; width: 45%">
+									<img src="projects/Screen Shot 2020-03-19 at 11.49.48 AM.png" alt="" class="img-responsive" style="display: inline; width: 45%">
+								</div>			
+								
+
+							</div>
+
+						</div>
 							
-							<p> This particular course culminated with a very interesting final assignment. I was provided with data containing a sample of buildings on the island of Montreal. An certain percentage of these buildings held information about their "place category", i.e. cafe or bank. My Task involved prompting a user for a radius in meters and a pair of coordinates, and then calculating the total area of each place category that intersected with the user-defined region. 
 
-							<br>
 
-							What really struck me about this assignment was the sheer scale of potential that came with being able to do like-minded work. Once i'd successfully created the python script, I realized that as long as I found suitable geospatial, I could repeat that same analysis on any place on earth. 
 
-							<br>
+					</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<h4> Research Paper Examing Socioeconomic Trends of Ethically Concious Restaurants</h4>
+
+								<p> For the research project of my Montreal Urban Field Study course, Python was instrumental in the development of the data that I then analyzed, consequently grounding the thesis with data. I harnessed the power of the open-sourced Geopandas library to create an ESRI Shapefile containing the place name and location of every vegan/ethically conscious restaurant located on the island of Montreal. When this was joined with Stats Canada Census data, a GIS analysis of the socioeconomic trends of areas with a high density of ethically conscious restaurants took place.</p>
+
+							</div>
+
+							<div class="col-lg-4">
+								<div class="thumbnail">
+									<img src="projects/restoSTM1.png" alt="" style="width: 100%">
+
+								</div>
+								
+								
+								
+								
+							</div>
+
+							<div class="col-lg-8" style="margin-top: 5%">
+
+								<p> The conclusions derived from the data analysis suggested that ethically conscious individuals were: </p>
+
+								<ul>
+									<li> near public transit</li>
+									<li> employed</li>
+									<li>university educated</li>
+
+								</ul>
+								
+
+							</div>
+
+							<div class="col-lg-12">
+								
+							</div>
+
+							<div class="col-lg-6">
+								<div class="thumbnail">
+									<img src="projects/restoEducation1.png" alt="" style="width: 100%">
+								</div>
+								
+								
+							</div>
+							<div class="col-lg-6">
+								<div class="thumbnail">
+									<img src="projects/restoUnemployment.png" alt="" style="width: 100%">
+								</div>
+								
+							</div>
+
 
 							
-
-							</p>
 
 						</div>
 
-						<div class="formatright">
-							
-							<img src="projects/geog407finalpic.png" alt="">
-							<br>
-							<img src="projects/Screen Shot 2020-03-19 at 11.49.33 AM.png" alt="">
-							<br>
-							<img src="projects/Screen Shot 2020-03-19 at 11.49.48 AM.png" alt="">
-							<br>
+						<div class="col-lg-12">
+						</div>
+
+						<br>
+
+						<div class="col-lg-6">
+
+							<p>Through Python, I came to familiarize myself with and use ArcPy, ESRI's industry leading Python site package. ArcPy grants an effective way to do geographic data analysis, data conversion, data management, and map automation with Python. I utilized ArcPy to create and update vector GIS datasets, as well as to create ArcMaps toolboxes. These very same ArcMaps toolboes are what enables GIS users to undergo the most fundamental levels of geographic analysis, and thus are very useful. </p>							
 
 
 						</div>
 
-						<div class="formatleft">
-							
-							<p> For the research project of my Montreal Urban Field Study course, Python was instrumental in the development of the data that I then analyzed, consequently grounding the thesis with data. I harnessed the power of the open-sourced Geopandas library to create an ESRI Shapefile containing the place name and location of every vegan/ethically conscious restaurant located on the island of Montreal. <br> When this was joined with Stats Canada Census data, a GIS analysis of the socioeconomic trends of areas with a high density of ethically conscious restaurants took place.</p>
-
-							<h4> The conclusions derived from the data analysis suggested that ethically conscious individuals were</h4>
-
-							<ul>
-								<li> near public transit</li>
-								<li> employed</li>
-								<li>university educated</li>
-
-							</ul>
-
+						<div class="col-lg-6">
+							<img src="pics/arcmap_arcpy.svg" alt="" style="width: 50%; margin-top: -4%">
 
 						</div>
+						
 
-						<div class="formatright">
-							
-							<img src="projects/restoSTM1.png" alt="">
-
-							<img src="projects/restoEducation1.png" alt="">
-
-							<img src="projects/restoUnemployment.png" alt="">
-						</div>
-
-						<p>
-							
-							Through Python, I came to familiarize myself with and use ArcPy, ESRI's industry leading Python site package. ArcPy grants an effective way to do geographic data analysis, data conversion, data management, and map automation with Python. I utilized ArcPy to create and update vector GIS datasets, as well as to create ArcMaps toolboxes. These very same ArcMaps toolboes are what enables GIS users to undergo the most fundamental levels of geographic analysis, and thus are very useful. 
-						</p>
+					
 
 
 					</div>
 
 					<div id="webdev">
-						<h3> Web and Mobile Applications </h3>
+						<div class="row">
+
+							<h3> Web and Mobile Applications </h3>
+
+							<div class="col-lg-6">
+								<h4> Tracking Web Application </h4>
+
+								<p>As one of the assignments for a GeoWeb course I took, my group was tasked with creating a web application that harnessed the GPS on mobile devices to track our movements around the city. We created the web browser that was mobile friendly using HTML, CSS and JavaScript. In order to track our movements, we simply had to open the browser on our phones and input a password. Our crowdsourced data was then displayed on an online map linked to our browswer.</p>
+
+								<button class="btn btn-link">
+									<a href="projects/index3KW.html"> Link to Web Tracking Application</a>
+
+								</button>
+								
+
+							</div>
 
 
-						<h4> Tracking Web Application </h4>
+							<div class="col-lg-6">
+								<h4> Spatial Distribution of Different Groups in Montreal Application</h4>
 
-						<p>As one of the assignments for a GeoWeb course I took, my group was tasked with creating a web application that harnessed the GPS on mobile devices to track our movements around the city. We created the web browser that was mobile friendly using HTML, CSS and JavaScript. In order to track our movements, we simply had to open the browser on our phones and input a password. Our crowdsourced data was then displayed on an online map linked to our browswer.</p>
+								<p> An effective way to close the citizen-city divide and raise awareness about the social dynamics of the people of Montreal is through providing more open-data regarding the living patterns of different ethnic groups in Montreal. This web browser was created to digitally demonstrate the population density trends of distinct minority groups in Montreal's neighborhoods from 1996 to 2016. </p>
 
-						<a href="projects/index3KW.html"> Link to Web Tracking Application</a>
+								<a href="projects/ass5_JOSH.html"> Link to Browser</a>
+								
 
-						<h4> Spatial Distribution of Different Groups in Montreal Application</h4>
+							</div>
 
-						<p> An effective way to close the citizen-city divide and raise awareness about the social dynamics of the people of Montreal is through providing more open-data regarding the living patterns of different ethnic groups in Montreal. This web browser was created to digitally demonstrate the population density trends of distinct minority groups in Montreal's neighborhoods from 1996 to 2016. </p>
-
-						<a href="projects/ass5_JOSH.html"> Link to Browser</a>
-
-
-
+						</div>
 
 					</div>
 
 
 
-				</div>	
+				</div>
 
-				<div id="sustainableDev">
+
+				<div id="sustainableDev" class="container">
+
 					<h2>  Sustainable Development Initiatives </h2>
 
 					<hr>
 
-					<h3> Barbados UNDP SGP Internship </h3>
+					<div class="row">
+						<div class="col-lg-12">
 
-					<p>
-						As part of my Barbados UNDP Small Grants Programme internship, I worked in a three-person team to develop a sustainable private sector finance model to faciliate the outfitting of fishing vessels with renewable energy. We engaged with various actors and organizations, from local boat owners to solar energy companies and local Barbadian credit unions. During this experience, I leveraged my ability to understand the  different actor's motivations to create outcomes that benefitted all stakeholders, while ensuring positive environmental change. This internship culminated with the creation of a solar panel base model designed for boats and of a special "fishers" loan available at local credit unions featuring long rebatement periods and low interest rates. We presented the findings from our internship to the public at the end of semester research symposium. The synthesis of this sustainable finance mechanism definitely had a strong positive impact on the effort to green the fisheries, as it drastically reduced the use of petrol to run the boat and its on-board devices, while also significant enhancing fishermen's safety.    
-					</p>
+							<h3>Barbados UNDP SGP Internship </h3>
 
-					<br>
-					
+							<p>As part of my Barbados UNDP Small Grants Programme internship, I worked in a three-person team to develop a sustainable private sector finance model to faciliate the outfitting of fishing vessels with renewable energy. We engaged with various actors and organizations, from local boat owners to solar energy companies and local Barbadian credit unions. During this experience, I leveraged my ability to understand the  different actor's motivations to create outcomes that benefitted all stakeholders, while ensuring positive environmental change. This internship culminated with the creation of a solar panel base model designed for boats and of a special "fishers" loan available at local credit unions featuring long rebatement periods and low interest rates. We presented the findings from our internship to the public at the end of semester research symposium. The synthesis of this sustainable finance mechanism definitely had a strong positive impact on the effort to green the fisheries, as it drastically reduced the use of petrol to run the boat and its on-board devices, while also significant enhancing fishermen's safety.</p>
 
-					<span> 
-						<img src="pics/boat.png" alt="boat with base model">
-						<img src="pics/interview.jpg" alt="interview with boat owner">
-						<img src="pics/drinks.jpg" alt="celebrating with team">
+							<button class="btn btn-link"></button>	<a href="projects/Final Report Sustainable Financing Mechanism 12318 2.pdf"> Download Sustainable Finance Model Report</a>
+	
 
-					</span>
+						</div>
 
-					<br>
+						<div class="col-lg-4">
+							<div class="thumbnail" style="margin-top: 3%">
+								<img src="pics/boat.png" alt="boat with base model" style="width: 100%">
+							</div>
+							
 
-					<a href="projects/Final Report Sustainable Financing Mechanism 12318.pdf"> Sustainable Finance Model Report</a>
+						</div>
 
-					<br>
-					<br>
+						<div class="col-lg-4">
+							<div class="thumbnail" style="margin-top: 3%">
+								<img src="pics/interview.jpg" alt="interview with boat owner" style="width: 100%">
+							</div>
+							
+						</div>
+
+						<div class="col-lg-4">
+							<div class="thumbnail" style="margin-top: 3%">
+								<img src="pics/drinks.jpg" alt="celebrating with team" style="width: 100%">
+							</div>
+
+						</div>
+
+					</div>
+
 
 					<h3> Paper Analyzing Unconventional Fossil Fuel Extraction Methods and their Impact on the Environment </h3>
 
@@ -277,7 +376,7 @@
 
 				</div>
 
-				<div id="urbanPlanning">
+				<div id="urbanPlanning" class="container">
 					<h2> Smart New Cities Research </h2>
 
 					<hr>
@@ -306,7 +405,7 @@
 				</div>
 
 
-				<div id="business">
+				<div id="business" class="container">
 					<h2>  Social Entrepreneurship</h2>
 
 					<hr>
@@ -323,15 +422,24 @@
 
 					<p> What is interesting about 60 Million Girls is that take a techno-centric approach to improving access to quality education in the Global South. In the vast majority of their projects, they deploy Mobile Learning Labs (MLLs). An MLL is an digital educational system comprised of 30 tablets, chargers, a solar-power energy generation home system, and a device that stores educational content in various mediums and connects to the tablets via a bluetooth connection. MLL's have bene hugely successful in providing children, especially girls with access to modern education. </p>
 
-
+					
 					<a href="projects/Social-Enterprise-Start-up-Plan-Final-60-million-girls (1).pdf"> Start-Up Plan for 60 Million Girls</a>
 
 				</div>
+						
 
+
+<!-- close tag for container -->
+			
 			</div>
 
-			
+	
+
+<!-- closing tag for portfolio div -->
 		</div>
+
+
+
 
 		<div id="contact">
 
@@ -346,29 +454,39 @@
 
 
 
-			<form action="" method="">
-				<label for="name"> Name: </label>
-				<input type="text" placeholder="name" name="name" id="name" required>
+			<form>
+				<div class="form-group">
+					<label for="name"> Name: </label>
+					<input class="form-control" type="text" placeholder="name" name="name" id="name" required style="width: 20%" >
 
-				<label for="e-mail"> E-mail: </label>
-				<input type="email" placeholder="e-mail" name="email" id="e-mail" required>
-				
-				<br> <br>
-				<button> Submit </button>
+				</div>
 
-			</form>
-
+				<div class="form-group">
+					<label for="e-mail"> E-mail: </label>
+					<input class= "form-control" type="email" placeholder="e-mail" name="email" id="e-mail" required style="width: 25%">
 
 
-			<a href="https://www.facebook.com/joshua.worden.7" class="fa fa-facebook"></a>								
-			<a href="https://www.linkedin.com/mynetwork/" class="fa fa-linkedin"></a>
-			<a href="https://twitter.com/GeoJTW" class="fa fa-twitter"></a>		
+				</div>
+
+				<div class="form-group">
+					<label for="message"> Message box</label>
+					<input type="text" class="form-control" name="message" required style="width: 30%" tabindex="4">
+				 
+
+
+
+				</div>
+
+				<div class="form-group">
+					<br> <br>
+					<button class="btn btn-primary" type="submit"> Submit </button>
+
+
+				</div>
+
+			</form>			
 					
-
 		</div>
-
-		<br>
-
 
 
 		<footer>
@@ -376,7 +494,12 @@
 
 			<div class="footer-container">
 			
-				<p>Copyright &copy; 2020 Josh Worden. </p>			
+				<p>Copyright &copy; 2020 Josh Worden. </p>	
+
+				<a href="https://www.facebook.com/joshua.worden.7" class="fa fa-facebook"></a>								
+				<a href="https://www.linkedin.com/mynetwork/" class="fa fa-linkedin"></a>
+				<a href="https://twitter.com/GeoJTW" class="fa fa-twitter"></a>		
+							
 
 			</div>
 		
