@@ -1,33 +1,42 @@
 #cover_photo{
 	background-image: url(pics/coverphoto.jpg);
+	background-repeat: repeat-y;
+	background-size: 100% 100%;
+
 	position: relative; 
-	padding: 150px;
-	background-size: 100%;
-	background-repeat: no-repeat;
 	display: flex;
-	height: 90%;
+	height: 100%;
+
 
 	}
 
 body{
-	margin: 0;
+	background-image: url(pics/rainforest.jpeg);
+	background-repeat: repeat-y;
+
 }
 
 #about_me{
-	font-family: 'Baloo Chettan 2', cursive;
-	margin-left: 10px;
-	position: relative;
-	top: -155px;
-
+	font-family: 'Alegreya Sans', sans-serif;
+	margin-left: 7%;
+	font-size: 3rem;
+	
 }
 
 #about_me h1{
-	font-size: 45px;
+	font-size: 10rem;
+	color: black;
 }
 
 #about_me ul{
 	list-style: none;
 
+}
+
+#about_me li{
+	font-size: 2rem;
+	color: black;
+	top: 20px;
 }
 
 #nav{
@@ -138,11 +147,20 @@ embed{
 	margin-top: 5%;
 }
 
-
-#contact{
-	position: relative;
-	left: 20px;
+.container{
+	background: white;
+	border-radius: .25%;
 }
+
+
+#blue1 h1 {
+	background: rgb(110,163,199);
+background: linear-gradient(63deg, rgba(110,163,199,1) 0%, rgba(120,179,245,1) 35%, rgba(60,117,209,1) 78%, rgba(191,255,247,1) 100%);
+
+
+}
+
+
 
 
 
